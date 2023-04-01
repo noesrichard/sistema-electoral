@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { TARJETONCOLUMNS, TARJETONES } from 'src/entities/tarjeton';
+import { Column } from './components/table/table.component';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'sistema-electoral';
+  rows: any[] = TARJETONES; 
+  columns: Column[] = TARJETONCOLUMNS; 
 }
