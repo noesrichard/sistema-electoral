@@ -17,6 +17,8 @@ import {MatInputModule} from '@angular/material/input';
 import { CreateDialogComponent } from './components/create-dialog/create-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { FormsModule } from '@angular/forms';
+import { EsduianteFormComponent } from './components/forms/esduiante-form/esduiante-form.component';
+import { BasicInputComponent } from './components/inputs/basic-input/basic-input.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { FormsModule } from '@angular/forms';
     BasicCrudComponent,
     TarjetonesComponent,
     TarjetonFormComponent,
-    CreateDialogComponent
+    CreateDialogComponent,
+    EsduianteFormComponent,
+    BasicInputComponent
   ],
   imports: [
     BrowserModule,
