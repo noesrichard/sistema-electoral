@@ -1,0 +1,45 @@
+<div class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource">
+
+
+    <ng-container
+      matColumnDef="{{ column.property }}"
+      *ngFor="let column of columns"
+    >
+      <th mat-header-cell *matHeaderCellDef>{{ column.label }}</th>
+      <td mat-cell *matCellDef="let element">{{ element[column.property] }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions" class="actions">
+      <th mat-header-cell *matHeaderCellDef>Acciones</th>
+      <td mat-cell *matCellDef="let row">
+        <button
+          mat-mini-fab
+          color="accent"
+          (click)="handleEdit(row)"
+        >
+          <mat-icon>edit</mat-icon>
+        </button>
+        &nbsp;
+        <button
+          mat-mini-fab
+          color="warn"
+          (click)="handleDelete(row)"
+        >
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="properties"></tr>
+    <tr style="cursor: pointer" mat-row *matRowDef="let row; columns: properties" (click)="handleRowClick(row)"></tr>
+
+  </table>
+
+  <mat-paginator
+    [pageSizeOptions]="[5, 10, 20]"
+    showFirstLastButtons
+    aria-label="Select page of periodic elements"
+  >
+  </mat-paginator>
+</div>
