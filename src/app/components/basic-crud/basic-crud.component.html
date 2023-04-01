@@ -1,7 +1,8 @@
-<div class="mat-elevation-z8">
+<div class="mat-elevation-z8" style="padding: 10px;">
+  <button mat-raised-button color="accent" (click)="handleCreate()">
+    Nuevo<mat-icon>add</mat-icon>
+  </button>
   <table mat-table [dataSource]="dataSource">
-
-
     <ng-container
       matColumnDef="{{ column.property }}"
       *ngFor="let column of columns"
@@ -13,27 +14,23 @@
     <ng-container matColumnDef="actions" class="actions">
       <th mat-header-cell *matHeaderCellDef>Acciones</th>
       <td mat-cell *matCellDef="let row">
-        <button
-          mat-mini-fab
-          color="accent"
-          (click)="handleEdit(row)"
-        >
+        <button mat-mini-fab color="accent" (click)="handleEdit(row)">
           <mat-icon>edit</mat-icon>
         </button>
         &nbsp;
-        <button
-          mat-mini-fab
-          color="warn"
-          (click)="handleDelete(row)"
-        >
+        <button mat-mini-fab color="warn" (click)="handleDelete(row)">
           <mat-icon>delete</mat-icon>
         </button>
       </td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="properties"></tr>
-    <tr style="cursor: pointer" mat-row *matRowDef="let row; columns: properties" (click)="handleRowClick(row)"></tr>
-
+    <tr
+      style="cursor: pointer"
+      mat-row
+      *matRowDef="let row; columns: properties"
+      (click)="handleRowClick(row)"
+    ></tr>
   </table>
 
   <mat-paginator

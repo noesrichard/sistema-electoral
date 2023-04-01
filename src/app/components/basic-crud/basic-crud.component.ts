@@ -11,6 +11,7 @@ export class BasicCrudComponent extends TableComponent {
   @Output() onDelete: EventEmitter<any> = new EventEmitter();
   @Output() onEdit: EventEmitter<any> = new EventEmitter();
   @Output() onRowClick: EventEmitter<any> = new EventEmitter();
+  @Output() onCreate: EventEmitter<any> = new EventEmitter();
 
   override setProperties(): void {
     this.columns.forEach((e) => {
@@ -31,4 +32,7 @@ export class BasicCrudComponent extends TableComponent {
     this.onRowClick.emit(row);
   }
 
+  handleCreate(): void{
+    this.onCreate.emit();
+  }
 }

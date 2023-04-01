@@ -10,14 +10,22 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { BasicCrudComponent } from './components/basic-crud/basic-crud.component';
 import { MatButtonModule } from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
-import { TarjetonesComponent } from './views/tarjetones/tarjetones.component'
+import { TarjetonesComponent } from './views/tarjetones/tarjetones.component';
+import { TarjetonFormComponent } from './components/forms/tarjeton-form/tarjeton-form.component'
+import { MatFormFieldModule } from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import { CreateDialogComponent } from './components/create-dialog/create-dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     TableComponent,
     BasicCrudComponent,
-    TarjetonesComponent
+    TarjetonesComponent,
+    TarjetonFormComponent,
+    CreateDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +36,11 @@ import { TarjetonesComponent } from './views/tarjetones/tarjetones.component'
     MatPaginatorModule,
     MatButtonModule,
     MatIconModule,
-  ],
+    MatFormFieldModule,
+    MatInputModule,
+    MatDialogModule,
+    FormsModule,
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
