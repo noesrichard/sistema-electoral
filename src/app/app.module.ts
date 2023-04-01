@@ -14,11 +14,14 @@ import { TarjetonesComponent } from './views/tarjetones/tarjetones.component';
 import { TarjetonFormComponent } from './components/forms/tarjeton-form/tarjeton-form.component'
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
-import { CreateDialogComponent } from './components/create-dialog/create-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { FormsModule } from '@angular/forms';
 import { EsduianteFormComponent } from './components/forms/esduiante-form/esduiante-form.component';
 import { BasicInputComponent } from './components/inputs/basic-input/basic-input.component';
+import { FormButtonsComponent } from './components/buttons/form-buttons/form-buttons.component';
+import { TarjetoFormDialogComponent } from './components/dialogs/tarjeto-form-dialog/tarjeto-form-dialog.component';
+import { HttpClientModule } from '@angular/common/http';
+import { DeleteDialogComponent } from './components/dialogs/delete-dialog/delete-dialog.component';
 
 @NgModule({
   declarations: [
@@ -27,9 +30,11 @@ import { BasicInputComponent } from './components/inputs/basic-input/basic-input
     BasicCrudComponent,
     TarjetonesComponent,
     TarjetonFormComponent,
-    CreateDialogComponent,
     EsduianteFormComponent,
-    BasicInputComponent
+    BasicInputComponent,
+    FormButtonsComponent,
+    TarjetoFormDialogComponent,
+    DeleteDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -44,6 +49,7 @@ import { BasicInputComponent } from './components/inputs/basic-input/basic-input
     MatInputModule,
     MatDialogModule,
     FormsModule,
+    HttpClientModule
     ],
   providers: [],
   bootstrap: [AppComponent]

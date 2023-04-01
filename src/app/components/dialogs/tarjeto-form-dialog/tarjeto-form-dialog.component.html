@@ -1,0 +1,10 @@
+<div class="container">
+  <app-tarjeton-form
+    [tarjeton]="data.tarjeton"
+  ></app-tarjeton-form>
+
+  <app-form-buttons
+    (onSave)="handleSave()"
+    (onCancel)="handleCancel()"
+  ></app-form-buttons>
+</div>

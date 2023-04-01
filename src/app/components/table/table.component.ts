@@ -1,8 +1,12 @@
 import {
   AfterViewInit,
   Component,
+  EventEmitter,
   Input,
+  OnChanges,
   OnInit,
+  Output,
+  SimpleChanges,
   ViewChild,
 } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
@@ -13,11 +17,12 @@ import { MatTableDataSource } from '@angular/material/table';
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.css'],
 })
-export class TableComponent implements AfterViewInit, OnInit {
+export class TableComponent implements AfterViewInit, OnInit, OnChanges {
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
   @Input() columns: Column[];
   @Input() rows: any[];
+  @Output() rowsChange: EventEmitter<any> = new EventEmitter();
 
   dataSource: MatTableDataSource<any>;
   properties: string[] = [];
@@ -28,6 +33,10 @@ export class TableComponent implements AfterViewInit, OnInit {
 
   ngOnInit(): void {
     this.setProperties();
+    this.dataSource = new MatTableDataSource<any>(this.rows);
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
     this.dataSource = new MatTableDataSource<any>(this.rows);
   }
 

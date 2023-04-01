@@ -1,0 +1,4 @@
+.justify-left{ 
+  display: flex; 
+  justify-content: end;
+}

@@ -1,4 +1,3 @@
-<mat-form-field appearance="outline">
-  <mat-label>Titulo</mat-label>
-  <input matInput placeholder="Titulo" [(ngModel)]="tarjeton.title">
-</mat-form-field>
+<div style="display: flex; flex-direction: column">
+  <app-basic-input label="Titulo" [(value)]="tarjeton.title"></app-basic-input>
+</div>
