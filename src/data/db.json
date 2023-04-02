@@ -1,0 +1,85 @@
+{
+  "cursos": [
+    {
+      "id": 1,
+      "nombre": "1BGUA"
+    },
+    {
+      "id": 2,
+      "nombre": "2BGUA"
+    }
+  ],
+  "estudiantes": [
+    {
+      "id": 1,
+      "cursoId": 1,
+      "cedula": "1850054733",
+      "nombre": "ALBUJA VILLACIS EMILIA MONSERRATH",
+      "sede": "HUACHIPATA",
+      "jornada": "VESPERTINA",
+      "email": "alviemmo13715195@estudiantes.edu.ec"
+    },
+    {
+      "id": 2,
+      "cursoId": 2,
+      "curso": null,
+      "cedula": "123",
+      "nombre": "asdf",
+      "sede": "asdf",
+      "jornada": "asfd",
+      "email": "asdf"
+    }
+  ],
+  "tarjetones": [
+    {
+      "id": 1,
+      "title": "Presidente",
+      "cursos": [
+        1,
+        2
+      ],
+      "cursosText": "1BGUA, 2BGUA, "
+    },
+    {
+      "id": 2,
+      "title": "Tesorero",
+      "cursos": [
+        1
+      ]
+    }
+  ],
+  "candidatos": [
+    {
+      "id": 1,
+      "nombre": "Richard",
+      "tarjetonId": 1
+    },
+    {
+      "id": 2,
+      "nombre": "Victor",
+      "tarjetonId": 1
+    },
+    {
+      "id": 4,
+      "nombre": "Manuel",
+      "tarjetonId": 2
+    }
+  ],
+  "votos": [
+    {
+      "id": 1,
+      "estudianteId": 1,
+      "candidatoId": 1
+    },
+    {
+      "id": 2,
+      "estudianteId": 1,
+      "candidatoId": 4
+    },
+    {
+      "id": 3,
+      "estudianteId": 2,
+      "candidatoId": 2
+    }
+  ]
+}
