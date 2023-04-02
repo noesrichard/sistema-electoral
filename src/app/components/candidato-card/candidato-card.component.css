@@ -3,6 +3,12 @@
   min-width: 300px;
 }
 
+.percentage{ 
+  color: green;
+}
+.numbers{ 
+  text-align: end;
+}
 .card-header{ 
   width: 100%;
   display: flex;

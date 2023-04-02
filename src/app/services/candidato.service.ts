@@ -30,4 +30,12 @@ export class CandidatoService implements Service<Candidato>{
     return this.http.get<any>(this.URL+'?tarjetonId='+id);
   }
 
+  getByCandidatoId(id: number): Observable<any>{
+    return this.http.get<any>(this.URL+'?id='+id);
+  }
+
+  getCandidatosAndVotosByTarjeton(id: number): Observable<any>{
+    return this.http.get<any>(this.URL+'?_embed=votos&tarjetonId='+id);
+  }
+
 }

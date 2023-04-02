@@ -18,12 +18,13 @@ export class CandidatoCardComponent implements OnInit {
   @Input() minimal: boolean = false;
   @Input() showCrudButtons: boolean = true;
   @Input() showVoteButton: boolean = true;
-  @Input() showVotoCounter: boolean = true; 
+  @Input() showVotoCounter: boolean = true;
 
-  votosCounter: number = 0; 
+  votosCounter: number = 0;
+  totalVotosCounter: number = 0;
 
   constructor(
-    private service: CandidatoService,
+    private candidatoService: CandidatoService,
     private votosService: VotoService
   ) {}
 
@@ -36,11 +37,20 @@ export class CandidatoCardComponent implements OnInit {
     //   this.isUserLoggedAdmin = false;
     // }
     //
-    this.votosService.getByCandidatoId(this.candidato.id).subscribe({ 
-      next: (response: Voto[]) => { 
-        this.votosCounter = response.length; 
-      }
-    })
+    this.votosService.getByCandidatoId(this.candidato.id).subscribe({
+      next: (response: Voto[]) => {
+        this.votosCounter = response.length;
+        this.candidatoService.getCandidatosAndVotosByTarjeton(
+          this.candidato.tarjetonId
+        ).subscribe({ 
+            next: (response) => { 
+              response.forEach(r => { 
+                this.totalVotosCounter += r.votos.length
+              })
+            }
+          });
+      },
+    });
   }
 
   handleDelete(): void {

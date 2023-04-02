@@ -37,5 +37,4 @@ export class VotoService {
   getByEstudianteId(id: number): Observable<any>{ 
     return this.http.get<any>(this.URL+'?estudianteId='+id);
   }
-
 }

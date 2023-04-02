@@ -5,7 +5,13 @@
         <div mat-card-avatar class="example-header-image"></div>
         <mat-card-title>{{ candidato.nombre }}</mat-card-title>
       </div>
-        <mat-card-subtitle>{{votosCounter}}</mat-card-subtitle>
+      <div class="numbers">
+        <mat-card-subtitle>{{ votosCounter }} </mat-card-subtitle>
+        <mat-card-subtitle
+          class="percentage"
+          >{{ (votosCounter / totalVotosCounter) * 100 }}%</mat-card-subtitle
+        >
+      </div>
     </div>
   </mat-card-header>
   <img
@@ -33,8 +39,8 @@
         <mat-icon>delete</mat-icon>
       </button>
     </div>
-    <button mat-raised-button color="primary"
-      *ngIf="showVoteButton"
-    >Votar</button>
+    <button mat-raised-button color="primary" *ngIf="showVoteButton">
+      Votar
+    </button>
   </mat-card-actions>
 </mat-card>
