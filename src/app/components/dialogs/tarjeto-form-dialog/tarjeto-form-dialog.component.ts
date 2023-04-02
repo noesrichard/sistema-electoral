@@ -1,6 +1,5 @@
 import { Component, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { TarjetonService } from "src/app/services/tarjeton.service";
 
 @Component({
   selector: 'app-tarjeto-form-dialog',
@@ -12,7 +11,6 @@ export class TarjetoFormDialogComponent {
   constructor(
     public dialogRef: MatDialogRef<TarjetoFormDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
-    private tarjetonService: TarjetonService,
   ){ 
   }
 

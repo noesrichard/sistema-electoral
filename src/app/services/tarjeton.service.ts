@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Tarjeton, TARJETONES } from 'src/entities/tarjeton';
+import { Tarjeton } from 'src/entities/tarjeton';
 import { Service } from './service';
 
 @Injectable({

@@ -22,6 +22,8 @@ import { FormButtonsComponent } from './components/buttons/form-buttons/form-but
 import { TarjetoFormDialogComponent } from './components/dialogs/tarjeto-form-dialog/tarjeto-form-dialog.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DeleteDialogComponent } from './components/dialogs/delete-dialog/delete-dialog.component';
+import { EstudiantesComponent } from './views/estudiantes/estudiantes.component';
+import { EstudianteFormDialogComponent } from './components/dialogs/estudiante-form-dialog/estudiante-form-dialog.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { DeleteDialogComponent } from './components/dialogs/delete-dialog/delete
     BasicInputComponent,
     FormButtonsComponent,
     TarjetoFormDialogComponent,
-    DeleteDialogComponent
+    DeleteDialogComponent,
+    EstudiantesComponent,
+    EstudianteFormDialogComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,14 @@
+<div class="main-container">
+  <h1>Estudiantes</h1>
+  <div class="table-container">
+    <app-basic-crud
+      [(rows)]="rows"
+      [columns]="columns"
+
+      (onCreate)="handleCreate()"
+      (onEdit)="handleEdit($event)"
+      (onDelete)="handleDelete($event)"
+
+    ></app-basic-crud>
+  </div>
+</div>

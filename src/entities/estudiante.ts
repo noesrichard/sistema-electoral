@@ -22,6 +22,16 @@ export const ESTUDIANTES: Estudiante[] = [
   },
 ];
 
+export const VOIDESTUDIANTE: Estudiante = { 
+    id: null,
+    curso: null,
+    cedula: null,
+    nombre: null,
+    sede: null,
+    jornada: null,
+    email: null,
+}
+
 export const ESTUDIANTESCOLUMNS: Column[] = [
   {property: "id", label: "ID"},
   {property: "curso", label: "Curso"},
