@@ -8,7 +8,7 @@ import {
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
 import { CandidatoService } from 'src/app/services/candidato.service';
-import { Candidato } from 'src/entities/candidato';
+import { Candidato } from 'src/app/entities/candidato';
 import { CandidatoFormDialogComponent } from '../dialogs/candidato-form-dialog/candidato-form-dialog.component';
 import { DeleteDialogComponent } from '../dialogs/delete-dialog/delete-dialog.component';
 
@@ -20,9 +20,9 @@ import { DeleteDialogComponent } from '../dialogs/delete-dialog/delete-dialog.co
 export class CandidatosListComponent implements OnInit, OnChanges {
   candidatos: Candidato[] = [];
   @Input() tarjetonId: number = 1;
-  @Input() minimalCards: boolean = false; 
-  @Input() showCrudButtons: boolean = true; 
-  @Input() showVoteButton: boolean = true; 
+  @Input() minimalCards: boolean = false;
+  @Input() showCrudButtons: boolean = true;
+  @Input() showVoteButton: boolean = true;
 
   constructor(
     private candidatoService: CandidatoService,

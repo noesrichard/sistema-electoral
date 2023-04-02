@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TarjetonService } from 'src/app/services/tarjeton.service';
-import { Tarjeton } from 'src/entities/tarjeton';
+import { Tarjeton } from 'src/app/entities/tarjeton';
 
 @Component({
   selector: 'app-resultados-view',
@@ -13,9 +13,9 @@ export class ResultadosViewComponent implements OnInit {
   constructor(private tarjetonesService: TarjetonService) {}
 
   ngOnInit(): void {
-    this.tarjetonesService.getAll().subscribe({ 
-      next: (response: Tarjeton[]) => { 
-        this.tarjetones = response; 
+    this.tarjetonesService.getAll().subscribe({
+      next: (response: Tarjeton[]) => {
+        this.tarjetones = response;
       }
     })
   }

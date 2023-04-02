@@ -2,8 +2,8 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { CandidatoService } from 'src/app/services/candidato.service';
 import { VotoService } from 'src/app/services/voto.service';
-import { Candidato } from 'src/entities/candidato';
-import { Voto } from 'src/entities/voto';
+import { Candidato } from 'src/app/entities/candidato';
+import { Voto } from 'src/app/entities/voto';
 import { DeleteDialogComponent } from '../dialogs/delete-dialog/delete-dialog.component';
 
 @Component({
@@ -42,9 +42,9 @@ export class CandidatoCardComponent implements OnInit {
         this.votosCounter = response.length;
         this.candidatoService.getCandidatosAndVotosByTarjeton(
           this.candidato.tarjetonId
-        ).subscribe({ 
-            next: (response) => { 
-              response.forEach(r => { 
+        ).subscribe({
+            next: (response) => {
+              response.forEach(r => {
                 this.totalVotosCounter += r.votos.length
               })
             }

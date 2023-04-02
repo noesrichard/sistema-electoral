@@ -1,25 +1,25 @@
 import { Component, OnInit } from '@angular/core';
 import { Column } from 'src/app/components/table/table.component';
-import { Tarjeton, TARJETONCOLUMNS, TARJETONES, VOIDTARJETON } from 'src/entities/tarjeton';
+import { Tarjeton, TARJETONCOLUMNS, TARJETONES, VOIDTARJETON } from 'src/app/entities/tarjeton';
 
 import {
   MatDialog,
   MAT_DIALOG_DATA,
   MatDialogRef,
 } from '@angular/material/dialog';
-import { TarjetoFormDialogComponent } from 'src/app/components/dialogs/tarjeto-form-dialog/tarjeto-form-dialog.component';
+import { TarjetonFormDialogComponent } from 'src/app/components/dialogs/tarjeton-form-dialog/tarjeton-form-dialog.component';
 import { TarjetonService } from 'src/app/services/tarjeton.service';
 import { DeleteDialogComponent } from 'src/app/components/dialogs/delete-dialog/delete-dialog.component';
 import { Router } from '@angular/router';
 import { CursoService } from 'src/app/services/curso.service';
-import { Curso } from 'src/entities/curso';
+import { Curso } from 'src/app/entities/curso';
 
 @Component({
-  selector: 'app-tarjetones',
-  templateUrl: './tarjetones.component.html',
-  styleUrls: ['./tarjetones.component.css'],
+  selector: 'app-tarjetones-view-view',
+  templateUrl: './tarjetones-view.component.html',
+  styleUrls: ['./tarjetones-view.component.css'],
 })
-export class TarjetonesComponent implements OnInit {
+export class TarjetonesViewComponent implements OnInit {
   title = 'sistema-electoral';
   rows: any[] = TARJETONES;
   columns: Column[] = TARJETONCOLUMNS;
@@ -35,17 +35,17 @@ export class TarjetonesComponent implements OnInit {
     this.getData();
   }
 
-  setCursos(tarjeton: Tarjeton, cursos: Curso[]): string{ 
-    let cursosString = ''; 
+  setCursos(tarjeton: Tarjeton, cursos: Curso[]): string{
+    let cursosString = '';
     let filterd = cursos.filter( curso => {
-      for(let i = 0; i < tarjeton.cursos.length; i++){ 
+      for(let i = 0; i < tarjeton.cursos.length; i++){
         if(curso.id == tarjeton.cursos[i]){
           return true;
         }
       }
       return false;
     })
-    filterd.forEach(curso => { 
+    filterd.forEach(curso => {
       cursosString = cursosString + curso.nombre + ', '
     })
     return cursosString;
@@ -53,12 +53,12 @@ export class TarjetonesComponent implements OnInit {
 
   getData(): void {
     let cursos = [];
-    this.cursosService.getAll().subscribe({ 
-      next: (response: Curso[])=> { 
+    this.cursosService.getAll().subscribe({
+      next: (response: Curso[])=> {
         cursos = response;
-        this.tarjetonService.getAll().subscribe({ 
-          next: (response: Tarjeton[]) => { 
-            this.rows = response.map(tarjeton => { 
+        this.tarjetonService.getAll().subscribe({
+          next: (response: Tarjeton[]) => {
+            this.rows = response.map(tarjeton => {
               return {
                 id: tarjeton.id,
                 title: tarjeton.title,
@@ -72,9 +72,9 @@ export class TarjetonesComponent implements OnInit {
     })
     // this.tarjetonService.getAll().subscribe({
     //   next: (response: Tarjeton[]) => {
-    //     this.rows = response.map(tarjeton => { 
+    //     this.rows = response.map(tarjeton => {
     //       let cursos = this.cursosService.getAll().subscribe({
-    //         next: (response: Curso[]) => { 
+    //         next: (response: Curso[]) => {
     //
     //         }
     //       })
@@ -85,7 +85,7 @@ export class TarjetonesComponent implements OnInit {
   }
 
   handleCreate(): void {
-    const dialogRef = this.dialog.open(TarjetoFormDialogComponent, {
+    const dialogRef = this.dialog.open(TarjetonFormDialogComponent, {
       data: { tarjeton: VOIDTARJETON },
     });
     dialogRef.afterClosed().subscribe((result) => {
@@ -100,7 +100,7 @@ export class TarjetonesComponent implements OnInit {
   }
 
   handleEdit(tarjeton: Tarjeton): void {
-    const dialogRef = this.dialog.open(TarjetoFormDialogComponent, {
+    const dialogRef = this.dialog.open(TarjetonFormDialogComponent, {
       data: { tarjeton: { ...tarjeton } },
     });
     dialogRef.afterClosed().subscribe((result) => {

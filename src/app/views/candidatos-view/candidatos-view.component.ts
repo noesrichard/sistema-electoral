@@ -5,19 +5,19 @@ import { CandidatosListComponent } from 'src/app/components/candidatos-list/cand
 import { CandidatoFormDialogComponent } from 'src/app/components/dialogs/candidato-form-dialog/candidato-form-dialog.component';
 import { CandidatoService } from 'src/app/services/candidato.service';
 import { Router } from '@angular/router';
-import { Tarjeton, VOIDTARJETON } from 'src/entities/tarjeton';
+import { Tarjeton, VOIDTARJETON } from 'src/app/entities/tarjeton';
 import { TarjetonService } from 'src/app/services/tarjeton.service';
 
 @Component({
-  selector: 'app-candidatos',
-  templateUrl: './candidatos.component.html',
-  styleUrls: ['./candidatos.component.css'],
+  selector: 'app-candidatos-view-view',
+  templateUrl: './candidatos-view.component.html',
+  styleUrls: ['./candidatos-view.component.css'],
 })
-export class CandidatosComponent implements OnInit {
+export class CandidatosViewComponent implements OnInit {
 
-  @ViewChild(CandidatosListComponent) candidatosListComponent: CandidatosListComponent;  
+  @ViewChild(CandidatosListComponent) candidatosListComponent: CandidatosListComponent;
   tarjetonId: number = 1;
-  tarjeton: Tarjeton = VOIDTARJETON; 
+  tarjeton: Tarjeton = VOIDTARJETON;
 
   constructor(
     private dialog: MatDialog,
@@ -31,7 +31,7 @@ export class CandidatosComponent implements OnInit {
     this.route.params.subscribe((params) => {
       this.tarjetonId = params['tarjetonId'];
       this.tarjetonService.getById(this.tarjetonId).subscribe({
-        next: (response)=> { 
+        next: (response)=> {
           this.tarjeton = response[0];
         }
       })
@@ -44,10 +44,10 @@ export class CandidatosComponent implements OnInit {
         candidato: { id: null, nombre: null, tarjetonId: this.tarjetonId },
       },
     });
-    dialogRef.afterClosed().subscribe((result) => { 
-      if(result){ 
-        this.candidatoService.create(result).subscribe({next: 
-          () => { 
+    dialogRef.afterClosed().subscribe((result) => {
+      if(result){
+        this.candidatoService.create(result).subscribe({next:
+          () => {
             this.candidatosListComponent.getData();
           }
         });
@@ -55,7 +55,7 @@ export class CandidatosComponent implements OnInit {
     })
   }
 
-  handleBack(): void{ 
+  handleBack(): void{
     this.router.navigate(['tarjetones'])
   }
 }

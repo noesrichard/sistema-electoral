@@ -20,7 +20,7 @@ export const ESTUDIANTES: Estudiante[] = [
     nombre: 'ALBUJA ... EMILIA ...',
     sede: 'HUACHIPATA',
     jornada: 'VERPERTINA',
-    email: 'albuja@estudiantes.edu.ec',
+    email: 'albuja@estudiantes-view.edu.ec',
   },
 ];
 

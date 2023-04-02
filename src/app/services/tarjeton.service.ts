@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Tarjeton } from 'src/entities/tarjeton';
+import { Tarjeton } from 'src/app/entities/tarjeton';
 import { Service } from './service';
 
 @Injectable({
@@ -25,7 +25,7 @@ export class TarjetonService implements Service<Tarjeton> {
     return this.http.get<any>(this.URL);
   }
 
-  getById(id: number): Observable<any>{ 
+  getById(id: number): Observable<any>{
     return this.http.get<any>(this.URL+'?id='+id);
   }
 }

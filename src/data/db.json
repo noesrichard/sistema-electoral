@@ -21,13 +21,13 @@
     },
     {
       "id": 2,
-      "cursoId": 2,
+      "cursoId": 1,
       "curso": null,
-      "cedula": "123",
+      "cedula": "asfd",
       "nombre": "asdf",
       "sede": "asdf",
-      "jornada": "asfd",
-      "email": "asdf"
+      "jornada": "asdf",
+      "email": "asfd"
     }
   ],
   "tarjetones": [
@@ -75,11 +75,6 @@
       "id": 2,
       "estudianteId": 1,
       "candidatoId": 4
-    },
-    {
-      "id": 3,
-      "estudianteId": 2,
-      "candidatoId": 2
     }
   ]
 }

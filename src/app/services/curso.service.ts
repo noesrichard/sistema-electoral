@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Curso } from 'src/entities/curso';
+import { Curso } from 'src/app/entities/curso';
 import { Service } from './service';
 
 @Injectable({
@@ -26,7 +26,7 @@ export class CursoService implements Service<Curso>{
     return this.http.get<any>(this.URL);
   }
 
-  getById(id: number): Observable<any>{ 
+  getById(id: number): Observable<any>{
     return this.http.get<any>(this.URL+'?id='+id);
   }
 

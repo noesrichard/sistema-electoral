@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Curso } from 'src/entities/curso';
+import { Curso } from 'src/app/entities/curso';
 
 @Component({
   selector: 'app-multi-select',
@@ -17,15 +17,15 @@ export class MultiSelectComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  handleInput(): void{ 
+  handleInput(): void{
     console.log("Seleccionados: ",this.value)
     this.valueChange.emit(this.value)
   }
 
 }
 
-export interface MultiSelectOption{ 
-  id: any; 
+export interface MultiSelectOption{
+  id: any;
   label: any;
   selected: boolean;
 }

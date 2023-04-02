@@ -2,20 +2,20 @@ import { Component, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
-  selector: 'app-tarjeto-form-dialog',
-  templateUrl: './tarjeto-form-dialog.component.html',
-  styleUrls: ['./tarjeto-form-dialog.component.css'],
+  selector: 'app-tarjeton-form-dialog',
+  templateUrl: './tarjeton-form-dialog.component.html',
+  styleUrls: ['./tarjeton-form-dialog.component.css'],
 })
-export class TarjetoFormDialogComponent {
+export class TarjetonFormDialogComponent {
 
   constructor(
-    public dialogRef: MatDialogRef<TarjetoFormDialogComponent>,
+    public dialogRef: MatDialogRef<TarjetonFormDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
-  ){ 
+  ){
   }
 
   handleCancel() {
-    this.dialogRef.close(); 
+    this.dialogRef.close();
   }
 
   handleSave() {

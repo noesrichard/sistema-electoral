@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Candidato, VOIDCANDIDATO } from 'src/entities/candidato';
+import { Candidato, VOIDCANDIDATO } from 'src/app/entities/candidato';
 
 @Component({
   selector: 'app-candidato-form',

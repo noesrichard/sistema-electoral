@@ -5,15 +5,15 @@ import { EstudianteFormDialogComponent } from 'src/app/components/dialogs/estudi
 import { Column } from 'src/app/components/table/table.component';
 import { CursoService } from 'src/app/services/curso.service';
 import { EstudianteService } from 'src/app/services/estudiante.service';
-import { Curso } from 'src/entities/curso';
-import { Estudiante, ESTUDIANTES, ESTUDIANTESCOLUMNS, VOIDESTUDIANTE } from 'src/entities/estudiante';
+import { Curso } from 'src/app/entities/curso';
+import { Estudiante, ESTUDIANTES, ESTUDIANTESCOLUMNS, VOIDESTUDIANTE } from 'src/app/entities/estudiante';
 
 @Component({
-  selector: 'app-estudiantes',
-  templateUrl: './estudiantes.component.html',
-  styleUrls: ['./estudiantes.component.css']
+  selector: 'app-estudiantes-view-view',
+  templateUrl: './estudiantes-view.component.html',
+  styleUrls: ['./estudiantes-view.component.css']
 })
-export class EstudiantesComponent {
+export class EstudiantesViewComponent {
 
   title = 'sistema-electoral';
   rows: any[] = ESTUDIANTES;
@@ -33,10 +33,10 @@ export class EstudiantesComponent {
     this.estudianteService.getAll().subscribe({
       next: (response: Estudiante[]) => {
         this.rows = response;
-        this.rows.forEach((estudiante: Estudiante) => { 
-          this.cursoService.getById(estudiante.cursoId).subscribe({ 
-            next: (response: Curso[]) => { 
-              estudiante.curso = response[0].nombre; 
+        this.rows.forEach((estudiante: Estudiante) => {
+          this.cursoService.getById(estudiante.cursoId).subscribe({
+            next: (response: Curso[]) => {
+              estudiante.curso = response[0].nombre;
             }
           })
         })

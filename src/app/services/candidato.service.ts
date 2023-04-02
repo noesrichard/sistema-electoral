@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Candidato } from 'src/entities/candidato';
+import { Candidato } from 'src/app/entities/candidato';
 import { Service } from './service';
 
 @Injectable({
@@ -26,7 +26,7 @@ export class CandidatoService implements Service<Candidato>{
     return this.http.get<any>(this.URL);
   }
 
-  getCandidatosByTarjetonId(id: number): Observable<any>{ 
+  getCandidatosByTarjetonId(id: number): Observable<any>{
     return this.http.get<any>(this.URL+'?tarjetonId='+id);
   }
 

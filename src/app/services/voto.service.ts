@@ -1,8 +1,8 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Tarjeton } from 'src/entities/tarjeton';
-import { Voto } from 'src/entities/voto';
+import { Tarjeton } from 'src/app/entities/tarjeton';
+import { Voto } from 'src/app/entities/voto';
 import { Service } from './service';
 
 @Injectable({
@@ -26,15 +26,15 @@ export class VotoService {
     return this.http.get<any>(this.URL);
   }
 
-  getById(id: number): Observable<any>{ 
+  getById(id: number): Observable<any>{
     return this.http.get<any>(this.URL+'?id='+id);
   }
 
-  getByCandidatoId(id: number): Observable<any>{ 
+  getByCandidatoId(id: number): Observable<any>{
     return this.http.get<any>(this.URL+'?candidatoId='+id);
   }
 
-  getByEstudianteId(id: number): Observable<any>{ 
+  getByEstudianteId(id: number): Observable<any>{
     return this.http.get<any>(this.URL+'?estudianteId='+id);
   }
 }

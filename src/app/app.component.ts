@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { Estudiante } from 'src/entities/estudiante';
-import { TARJETONCOLUMNS, TARJETONES } from 'src/entities/tarjeton';
+import { Estudiante } from 'src/app/entities/estudiante';
+import { TARJETONCOLUMNS, TARJETONES } from 'src/app/entities/tarjeton';
 import { Column } from './components/table/table.component';
 
 @Component({
