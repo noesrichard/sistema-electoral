@@ -24,4 +24,8 @@ export class TarjetonService implements Service<Tarjeton> {
   getAll(): Observable<any> {
     return this.http.get<any>(this.URL);
   }
+
+  getById(id: number): Observable<any>{ 
+    return this.http.get<any>(this.URL+'?id='+id);
+  }
 }

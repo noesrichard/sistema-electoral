@@ -5,6 +5,12 @@
   align-items: center; 
 }
 
+.title{ 
+  display: flex;
+  padding-top: 10px;
+  padding-left: 21%;
+}
+
 .new-button{ 
-  margin-left: 10px;
+  margin-left: 10px; 
 }
