@@ -10,6 +10,7 @@ export class MultiSelectComponent implements OnInit {
 
   @Input() options: MultiSelectOption[];
   @Input() value: any;
+  @Input() multiple: boolean = true;
   @Output() valueChange: EventEmitter<any> = new EventEmitter();
   @Input() label: any;
 

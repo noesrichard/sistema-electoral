@@ -11,8 +11,6 @@ import { MultiSelectOption } from '../../multi-select/multi-select.component';
 })
 export class TarjetonFormComponent implements OnInit {
   @Input() tarjeton: Tarjeton = VOIDTARJETON;
-  cursos: any = [];
-
   options: MultiSelectOption[] = [];
 
   constructor(private cursosService: CursoService) {}

@@ -11,6 +11,8 @@ import { TarjetoFormDialogComponent } from 'src/app/components/dialogs/tarjeto-f
 import { TarjetonService } from 'src/app/services/tarjeton.service';
 import { DeleteDialogComponent } from 'src/app/components/dialogs/delete-dialog/delete-dialog.component';
 import { Router } from '@angular/router';
+import { CursoService } from 'src/app/services/curso.service';
+import { Curso } from 'src/entities/curso';
 
 @Component({
   selector: 'app-tarjetones',
@@ -25,6 +27,7 @@ export class TarjetonesComponent implements OnInit {
   constructor(
     private dialog: MatDialog,
     private tarjetonService: TarjetonService,
+    private cursosService: CursoService,
     private router: Router,
   ) {}
 
@@ -32,12 +35,53 @@ export class TarjetonesComponent implements OnInit {
     this.getData();
   }
 
+  setCursos(tarjeton: Tarjeton, cursos: Curso[]): string{ 
+    let cursosString = ''; 
+    let filterd = cursos.filter( curso => {
+      for(let i = 0; i < tarjeton.cursos.length; i++){ 
+        if(curso.id == tarjeton.cursos[i]){
+          return true;
+        }
+      }
+      return false;
+    })
+    filterd.forEach(curso => { 
+      cursosString = cursosString + curso.nombre + ', '
+    })
+    return cursosString;
+  }
+
   getData(): void {
-    this.tarjetonService.getAll().subscribe({
-      next: (response: any) => {
-        this.rows = response;
-      },
-    });
+    let cursos = [];
+    this.cursosService.getAll().subscribe({ 
+      next: (response: Curso[])=> { 
+        cursos = response;
+        this.tarjetonService.getAll().subscribe({ 
+          next: (response: Tarjeton[]) => { 
+            this.rows = response.map(tarjeton => { 
+              return {
+                id: tarjeton.id,
+                title: tarjeton.title,
+                cursos: tarjeton.cursos,
+                cursosText: this.setCursos(tarjeton, cursos),
+              }
+            })
+          }
+        })
+      }
+    })
+    // this.tarjetonService.getAll().subscribe({
+    //   next: (response: Tarjeton[]) => {
+    //     this.rows = response.map(tarjeton => { 
+    //       let cursos = this.cursosService.getAll().subscribe({
+    //         next: (response: Curso[]) => { 
+    //
+    //         }
+    //       })
+    //       return {id: tarjeton.id, }
+    //     });
+    //   },
+    // });
   }
 
   handleCreate(): void {

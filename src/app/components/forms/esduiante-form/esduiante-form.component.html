@@ -1,5 +1,10 @@
 <div style="display: flex; flex-direction: column">
-  <app-basic-input label="Curso" [(value)]="estudiante.cursoId"></app-basic-input>
+  <app-multi-select
+    label="Curso"
+    [(value)]="estudiante.cursoId"
+    [options]="options"
+    [multiple]="false"
+  ></app-multi-select>
   <app-basic-input
     label="Cedula"
     [(value)]="estudiante.cedula"

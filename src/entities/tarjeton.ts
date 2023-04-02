@@ -18,7 +18,8 @@ export const VOIDTARJETON: Tarjeton = {
   cursos: null,
 }
 
-export const TARJETONCOLUMNS: Column[] = [ 
+export const TARJETONCOLUMNS: Column[] = [
   {label: 'ID', property: 'id'},
   {label: 'Titulo', property: 'title'},
+  {label: 'Cursos', property: 'cursosText'},
 ] 
