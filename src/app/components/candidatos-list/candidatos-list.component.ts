@@ -20,6 +20,9 @@ import { DeleteDialogComponent } from '../dialogs/delete-dialog/delete-dialog.co
 export class CandidatosListComponent implements OnInit, OnChanges {
   candidatos: Candidato[] = [];
   @Input() tarjetonId: number = 1;
+  @Input() minimalCards: boolean = false; 
+  @Input() showCrudButtons: boolean = true; 
+  @Input() showVoteButton: boolean = true; 
 
   constructor(
     private candidatoService: CandidatoService,

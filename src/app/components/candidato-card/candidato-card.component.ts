@@ -1,7 +1,9 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { CandidatoService } from 'src/app/services/candidato.service';
+import { VotoService } from 'src/app/services/voto.service';
 import { Candidato } from 'src/entities/candidato';
+import { Voto } from 'src/entities/voto';
 import { DeleteDialogComponent } from '../dialogs/delete-dialog/delete-dialog.component';
 
 @Component({
@@ -11,11 +13,19 @@ import { DeleteDialogComponent } from '../dialogs/delete-dialog/delete-dialog.co
 })
 export class CandidatoCardComponent implements OnInit {
   @Input() candidato: Candidato;
-  @Output() onDelete: EventEmitter<any> = new EventEmitter(); 
-  @Output() onEdit: EventEmitter<any> = new EventEmitter(); 
+  @Output() onDelete: EventEmitter<any> = new EventEmitter();
+  @Output() onEdit: EventEmitter<any> = new EventEmitter();
+  @Input() minimal: boolean = false;
+  @Input() showCrudButtons: boolean = true;
+  @Input() showVoteButton: boolean = true;
+  @Input() showVotoCounter: boolean = true; 
 
+  votosCounter: number = 0; 
 
-  constructor(private service: CandidatoService, private dialog: MatDialog) {}
+  constructor(
+    private service: CandidatoService,
+    private votosService: VotoService
+  ) {}
 
   isUserLoggedAdmin: boolean = true;
 
@@ -25,13 +35,19 @@ export class CandidatoCardComponent implements OnInit {
     // }else{
     //   this.isUserLoggedAdmin = false;
     // }
+    //
+    this.votosService.getByCandidatoId(this.candidato.id).subscribe({ 
+      next: (response: Voto[]) => { 
+        this.votosCounter = response.length; 
+      }
+    })
   }
 
   handleDelete(): void {
     this.onDelete.emit(this.candidato);
   }
 
-  handleEdit(): void{ 
-    this.onEdit.emit(this.candidato); 
+  handleEdit(): void {
+    this.onEdit.emit(this.candidato);
   }
 }

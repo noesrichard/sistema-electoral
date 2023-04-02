@@ -12,6 +12,11 @@ export const CURSOS: Curso[] =[
   },
 ];
 
+export const VOIDCURSO: Curso = { 
+  id: null,
+  nombre: null
+}
+
 export const CURSOCOLUMNS: Column[] = [
   {property: "id", label: "ID"},
   {property: "curso", label: "Nombre"},

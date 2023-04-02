@@ -1,0 +1,12 @@
+.votes-sections{ 
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.card-container{ 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -34,6 +34,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatDividerModule } from '@angular/material/divider';
 import { MultiSelectComponent } from './components/multi-select/multi-select.component';
 import {MatSelectModule} from '@angular/material/select';
+import { ResultadosViewComponent } from './views/resultados-view/resultados-view.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import {MatSelectModule} from '@angular/material/select';
     CandidatoFormDialogComponent,
     CandidatoFormComponent,
     MultiSelectComponent,
+    ResultadosViewComponent,
   ],
   imports: [
     BrowserModule,

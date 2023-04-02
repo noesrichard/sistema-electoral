@@ -5,16 +5,17 @@
         <div mat-card-avatar class="example-header-image"></div>
         <mat-card-title>{{ candidato.nombre }}</mat-card-title>
       </div>
+        <mat-card-subtitle>{{votosCounter}}</mat-card-subtitle>
     </div>
   </mat-card-header>
   <img
+    *ngIf="!minimal"
     mat-card-image
     src="https://material.angular.io/assets/img/examples/shiba2.jpg"
     alt="Photo of a Shiba Inu"
   />
-  <mat-card-content> </mat-card-content>
-  <mat-card-actions class="actions">
-    <div class="crud-actions">
+  <mat-card-actions class="actions" *ngIf="showCrudButtons || showVoteButton">
+    <div class="crud-actions" *ngIf="showCrudButtons">
       <button
         mat-button
         color="primary"
@@ -32,6 +33,8 @@
         <mat-icon>delete</mat-icon>
       </button>
     </div>
-    <button mat-raised-button color="primary">Votar</button>
+    <button mat-raised-button color="primary"
+      *ngIf="showVoteButton"
+    >Votar</button>
   </mat-card-actions>
 </mat-card>

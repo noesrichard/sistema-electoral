@@ -1,0 +1,13 @@
+<div *ngFor="let tarjeton of tarjetones">
+  <div class="votes-sections">
+    <h1>{{ tarjeton.title }}</h1>
+  </div>
+  <div class="card-container">
+    <app-candidatos-list
+      [tarjetonId]="tarjeton.id"
+      [showCrudButtons]="false"
+      [showVoteButton]="false"
+      [minimalCards]="true"
+    ></app-candidatos-list>
+  </div>
+</div>

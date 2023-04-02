@@ -5,6 +5,10 @@
   align-items: center; 
 }
 
+.cards{ 
+  margin-left: 10%;
+}
+
 .title{ 
   display: flex;
   padding-top: 10px;
