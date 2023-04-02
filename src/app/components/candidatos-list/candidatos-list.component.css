@@ -1,4 +1,10 @@
 .flex-row{ 
   display: flex;
-  justify-content: space-evenly;
+  flex-wrap: wrap;
+  padding-left: 10%;
+}
+
+.card{ 
+  margin-top: 10px;
+  margin-left: 10px;
 }

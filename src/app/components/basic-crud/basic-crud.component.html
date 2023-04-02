@@ -14,11 +14,11 @@
     <ng-container matColumnDef="actions" class="actions">
       <th mat-header-cell *matHeaderCellDef>Acciones</th>
       <td mat-cell *matCellDef="let row">
-        <button mat-mini-fab color="accent" (click)="handleEdit(row)">
+        <button mat-mini-fab color="accent" (click)="handleEdit(row); $event.stopPropagation()">
           <mat-icon>edit</mat-icon>
         </button>
         &nbsp;
-        <button mat-mini-fab color="warn" (click)="handleDelete(row)">
+        <button mat-mini-fab color="warn" (click)="handleDelete(row); $event.stopPropagation()">
           <mat-icon>delete</mat-icon>
         </button>
       </td>

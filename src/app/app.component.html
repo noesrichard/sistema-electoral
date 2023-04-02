@@ -1,4 +1,22 @@
 <!-- <app-tarjetones></app-tarjetones> -->
 <!-- <app-estudiantes></app-estudiantes> -->
 <!-- <app-candidatos-list></app-candidatos-list> -->
-<router-outlet></router-outlet>
+<mat-drawer-container class="example-container">
+  <mat-drawer mode="side" opened>
+    <div class="title">
+      <h1>Sistema Electoral</h1>
+    </div>
+    <mat-divider></mat-divider>
+    <div class="buttons">
+      <button routerLink="tarjetones" mat-button>
+        Tarjetones <mat-icon>ballot</mat-icon>
+      </button>
+      <button routerLink="estudiantes" mat-button>
+        Estudiantes <mat-icon>person</mat-icon>
+      </button>
+    </div>
+  </mat-drawer>
+  <mat-drawer-content>
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>

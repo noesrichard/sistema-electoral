@@ -9,11 +9,11 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { BasicCrudComponent } from './components/basic-crud/basic-crud.component';
 import { MatButtonModule } from '@angular/material/button';
-import {MatIconModule} from '@angular/material/icon';
+import { MatIconModule } from '@angular/material/icon';
 import { TarjetonesComponent } from './views/tarjetones/tarjetones.component';
-import { TarjetonFormComponent } from './components/forms/tarjeton-form/tarjeton-form.component'
+import { TarjetonFormComponent } from './components/forms/tarjeton-form/tarjeton-form.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material/input';
+import { MatInputModule } from '@angular/material/input';
 import { MatDialogModule } from '@angular/material/dialog';
 import { FormsModule } from '@angular/forms';
 import { EsduianteFormComponent } from './components/forms/esduiante-form/esduiante-form.component';
@@ -25,11 +25,13 @@ import { DeleteDialogComponent } from './components/dialogs/delete-dialog/delete
 import { EstudiantesComponent } from './views/estudiantes/estudiantes.component';
 import { EstudianteFormDialogComponent } from './components/dialogs/estudiante-form-dialog/estudiante-form-dialog.component';
 import { CandidatoCardComponent } from './components/candidato-card/candidato-card.component';
-import {MatCardModule} from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
 import { CandidatosListComponent } from './components/candidatos-list/candidatos-list.component';
 import { CandidatosComponent } from './views/candidatos/candidatos.component';
 import { CandidatoFormDialogComponent } from './components/dialogs/candidato-form-dialog/candidato-form-dialog.component';
 import { CandidatoFormComponent } from './component/forms/candidato-form/candidato-form.component';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatDividerModule } from '@angular/material/divider';
 
 @NgModule({
   declarations: [
@@ -49,14 +51,14 @@ import { CandidatoFormComponent } from './component/forms/candidato-form/candida
     CandidatosListComponent,
     CandidatosComponent,
     CandidatoFormDialogComponent,
-    CandidatoFormComponent
+    CandidatoFormComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatTableModule, 
+    MatTableModule,
     MatPaginatorModule,
     MatButtonModule,
     MatIconModule,
@@ -66,8 +68,10 @@ import { CandidatoFormComponent } from './component/forms/candidato-form/candida
     FormsModule,
     HttpClientModule,
     MatCardModule,
-    ],
+    MatSidenavModule,
+    MatDividerModule,
+  ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -1,6 +1,11 @@
-<button mat-raised-button color="primary"
+<div class="buttons">
+<button mat-fab color="accent" (click)="handleBack()"> 
+  <mat-icon >keyboard_arrow_left</mat-icon>
+</button>
+<button class="new-button" mat-raised-button color="primary"
   (click)="handleNew()"
 >Nuevo Candidato</button>
+</div>
 <app-candidatos-list
   [tarjetonId]="tarjetonId"
 ></app-candidatos-list>

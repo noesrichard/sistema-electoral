@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { CandidatosListComponent } from 'src/app/components/candidatos-list/candidatos-list.component';
 import { CandidatoFormDialogComponent } from 'src/app/components/dialogs/candidato-form-dialog/candidato-form-dialog.component';
 import { CandidatoService } from 'src/app/services/candidato.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-candidatos',
@@ -18,7 +19,8 @@ export class CandidatosComponent implements OnInit {
   constructor(
     private dialog: MatDialog,
     private candidatoService: CandidatoService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -42,5 +44,9 @@ export class CandidatosComponent implements OnInit {
         });
       }
     })
+  }
+
+  handleBack(): void{ 
+    this.router.navigate(['tarjetones'])
   }
 }

@@ -1,0 +1,10 @@
+.buttons{ 
+  margin-top: 10px;
+  margin-left: 11%; 
+  display: flex;
+  align-items: center; 
+}
+
+.new-button{ 
+  margin-left: 10px;
+}
