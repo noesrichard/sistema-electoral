@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Column } from 'src/app/components/table/table.component';
-import { Tarjeton, TARJETONCOLUMNS, TARJETONES } from 'src/entities/tarjeton';
+import { Tarjeton, TARJETONCOLUMNS, TARJETONES, VOIDTARJETON } from 'src/entities/tarjeton';
 
 import {
   MatDialog,
@@ -42,7 +42,7 @@ export class TarjetonesComponent implements OnInit {
 
   handleCreate(): void {
     const dialogRef = this.dialog.open(TarjetoFormDialogComponent, {
-      data: { tarjeton: { id: null, title: null } },
+      data: { tarjeton: VOIDTARJETON },
     });
     dialogRef.afterClosed().subscribe((result) => {
       if (result) {

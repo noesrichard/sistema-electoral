@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Candidato } from 'src/entities/candidato';
+import { Candidato, VOIDCANDIDATO } from 'src/entities/candidato';
 
 @Component({
   selector: 'app-candidato-form',
@@ -7,8 +7,6 @@ import { Candidato } from 'src/entities/candidato';
   styleUrls: ['./candidato-form.component.css']
 })
 export class CandidatoFormComponent {
-  @Input() candidato: Candidato = { 
-    id: null, nombre: null, tarjetonId: null,
-  }
+  @Input() candidato: Candidato = VOIDCANDIDATO;
 
 }

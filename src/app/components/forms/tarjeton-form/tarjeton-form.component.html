@@ -1,3 +1,8 @@
 <div style="display: flex; flex-direction: column">
   <app-basic-input label="Titulo" [(value)]="tarjeton.title"></app-basic-input>
+  <app-multi-select
+    label="Cursos"
+    [(value)]="tarjeton.cursos"
+    [options]="options"
+  ></app-multi-select>
 </div>

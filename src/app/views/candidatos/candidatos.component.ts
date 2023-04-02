@@ -5,7 +5,7 @@ import { CandidatosListComponent } from 'src/app/components/candidatos-list/cand
 import { CandidatoFormDialogComponent } from 'src/app/components/dialogs/candidato-form-dialog/candidato-form-dialog.component';
 import { CandidatoService } from 'src/app/services/candidato.service';
 import { Router } from '@angular/router';
-import { Tarjeton } from 'src/entities/tarjeton';
+import { Tarjeton, VOIDTARJETON } from 'src/entities/tarjeton';
 import { TarjetonService } from 'src/app/services/tarjeton.service';
 
 @Component({
@@ -17,7 +17,7 @@ export class CandidatosComponent implements OnInit {
 
   @ViewChild(CandidatosListComponent) candidatosListComponent: CandidatosListComponent;  
   tarjetonId: number = 1;
-  tarjeton: Tarjeton = {id: null, title: null}; 
+  tarjeton: Tarjeton = VOIDTARJETON; 
 
   constructor(
     private dialog: MatDialog,
@@ -32,7 +32,7 @@ export class CandidatosComponent implements OnInit {
       this.tarjetonId = params['tarjetonId'];
       this.tarjetonService.getById(this.tarjetonId).subscribe({
         next: (response)=> { 
-          this.tarjeton = response[0]; 
+          this.tarjeton = response[0];
         }
       })
     });

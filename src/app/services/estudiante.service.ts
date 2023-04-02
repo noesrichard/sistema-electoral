@@ -9,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class EstudianteService implements Service<Estudiante>{
 
-  URL: string = 'http://localhost:3000/estudiante';
+  URL: string = 'http://localhost:3000/estudiantes';
 
   constructor(private http: HttpClient) {}
 

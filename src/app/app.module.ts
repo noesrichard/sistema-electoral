@@ -32,6 +32,8 @@ import { CandidatoFormDialogComponent } from './components/dialogs/candidato-for
 import { CandidatoFormComponent } from './component/forms/candidato-form/candidato-form.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatDividerModule } from '@angular/material/divider';
+import { MultiSelectComponent } from './components/multi-select/multi-select.component';
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -52,6 +54,7 @@ import { MatDividerModule } from '@angular/material/divider';
     CandidatosComponent,
     CandidatoFormDialogComponent,
     CandidatoFormComponent,
+    MultiSelectComponent,
   ],
   imports: [
     BrowserModule,
@@ -70,6 +73,7 @@ import { MatDividerModule } from '@angular/material/divider';
     MatCardModule,
     MatSidenavModule,
     MatDividerModule,
+    MatSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

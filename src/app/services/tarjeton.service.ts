@@ -8,7 +8,7 @@ import { Service } from './service';
   providedIn: 'root',
 })
 export class TarjetonService implements Service<Tarjeton> {
-  URL: string = 'http://localhost:3000/tarjeton';
+  URL: string = 'http://localhost:3000/tarjetones';
 
   constructor(private http: HttpClient) {}
 

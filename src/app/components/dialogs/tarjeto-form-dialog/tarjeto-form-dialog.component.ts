@@ -19,6 +19,7 @@ export class TarjetoFormDialogComponent {
   }
 
   handleSave() {
+    console.log(this.data.tarjeton)
     this.dialogRef.close(this.data.tarjeton);
   }
 }

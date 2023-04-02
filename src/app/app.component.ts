@@ -10,21 +10,6 @@ import { Column } from './components/table/table.component';
 })
 export class AppComponent {
   title = 'sistema-electoral';
-  rows: any[] = TARJETONES;
-  columns: Column[] = TARJETONCOLUMNS;
 
-  @Input() estudiante: Estudiante = {
-    id: null,
-    curso: null,
-    cedula: null,
-    nombre: null,
-    sede: null,
-    jornada: null,
-    email: null,
-  };
-
-  handleSave(){ 
-    console.log(this.estudiante)
-  }
 }
 

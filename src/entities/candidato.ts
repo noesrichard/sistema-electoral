@@ -15,6 +15,12 @@ export const CANDIDATOS: Candidato[] =[
   },
 ];
 
+export const VOIDCANDIDATO: Candidato = { 
+  id: null,
+  nombre: null,
+  tarjetonId: null,
+}
+
 export const CANDIDATOSCOLUMNS: Column[] = [
   {property: "curso", label: "Curso"},
   {property: "nombre", label: "Nombre"},
