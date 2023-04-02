@@ -1,0 +1,10 @@
+<div class="container">
+  <app-candidato-form
+    [candidato]="data.candidato"
+  > </app-candidato-form>
+
+  <app-form-buttons
+    (onSave)="handleSave()"
+    (onCancel)="handleCancel()"
+  ></app-form-buttons>
+</div>

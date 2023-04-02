@@ -1,15 +1,20 @@
 <mat-card class="example-card">
   <mat-card-header>
-    <div mat-card-avatar class="example-header-image"></div>
-    <mat-card-title>{{title}}</mat-card-title>
+    <div class="card-header">
+      <div class="card-header-information">
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>{{ candidato.nombre }}</mat-card-title>
+      </div>
+      <button mat-raised-button color="warn" *ngIf="isUserLoggedAdmin" (click)="handleDelete()">Eliminar</button>
+    </div>
   </mat-card-header>
-  <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-  <mat-card-content>
-    <p>
-      {{description}}
-    </p>
-  </mat-card-content>
-  <mat-card-actions class='actions'>
+  <img
+    mat-card-image
+    src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+    alt="Photo of a Shiba Inu"
+  />
+  <mat-card-content> </mat-card-content>
+  <mat-card-actions class="actions">
     <button mat-raised-button color="primary">Votar</button>
   </mat-card-actions>
 </mat-card>

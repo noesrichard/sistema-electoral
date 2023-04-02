@@ -10,6 +10,7 @@ import {
 import { TarjetoFormDialogComponent } from 'src/app/components/dialogs/tarjeto-form-dialog/tarjeto-form-dialog.component';
 import { TarjetonService } from 'src/app/services/tarjeton.service';
 import { DeleteDialogComponent } from 'src/app/components/dialogs/delete-dialog/delete-dialog.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tarjetones',
@@ -23,7 +24,8 @@ export class TarjetonesComponent implements OnInit {
 
   constructor(
     private dialog: MatDialog,
-    private tarjetonService: TarjetonService
+    private tarjetonService: TarjetonService,
+    private router: Router,
   ) {}
 
   ngOnInit(): void {
@@ -79,5 +81,9 @@ export class TarjetonesComponent implements OnInit {
         });
       }
     });
+  }
+
+  handleRowClick(tarjeton: Tarjeton) {
+    this.router.navigate(['candidatos', tarjeton.id])
   }
 }

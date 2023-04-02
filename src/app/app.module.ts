@@ -27,6 +27,9 @@ import { EstudianteFormDialogComponent } from './components/dialogs/estudiante-f
 import { CandidatoCardComponent } from './components/candidato-card/candidato-card.component';
 import {MatCardModule} from '@angular/material/card';
 import { CandidatosListComponent } from './components/candidatos-list/candidatos-list.component';
+import { CandidatosComponent } from './views/candidatos/candidatos.component';
+import { CandidatoFormDialogComponent } from './components/dialogs/candidato-form-dialog/candidato-form-dialog.component';
+import { CandidatoFormComponent } from './component/forms/candidato-form/candidato-form.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +46,10 @@ import { CandidatosListComponent } from './components/candidatos-list/candidatos
     EstudiantesComponent,
     EstudianteFormDialogComponent,
     CandidatoCardComponent,
-    CandidatosListComponent
+    CandidatosListComponent,
+    CandidatosComponent,
+    CandidatoFormDialogComponent,
+    CandidatoFormComponent
   ],
   imports: [
     BrowserModule,
