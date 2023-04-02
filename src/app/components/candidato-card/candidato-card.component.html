@@ -5,7 +5,6 @@
         <div mat-card-avatar class="example-header-image"></div>
         <mat-card-title>{{ candidato.nombre }}</mat-card-title>
       </div>
-      <button mat-raised-button color="warn" *ngIf="isUserLoggedAdmin" (click)="handleDelete()">Eliminar</button>
     </div>
   </mat-card-header>
   <img
@@ -15,6 +14,24 @@
   />
   <mat-card-content> </mat-card-content>
   <mat-card-actions class="actions">
+    <div class="crud-actions">
+      <button
+        mat-button
+        color="primary"
+        *ngIf="isUserLoggedAdmin"
+        (click)="handleEdit()"
+      >
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button
+        mat-button
+        color="warn"
+        *ngIf="isUserLoggedAdmin"
+        (click)="handleDelete()"
+      >
+        <mat-icon>delete</mat-icon>
+      </button>
+    </div>
     <button mat-raised-button color="primary">Votar</button>
   </mat-card-actions>
 </mat-card>

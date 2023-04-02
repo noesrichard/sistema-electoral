@@ -9,6 +9,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
 import { CandidatoService } from 'src/app/services/candidato.service';
 import { Candidato } from 'src/entities/candidato';
+import { CandidatoFormDialogComponent } from '../dialogs/candidato-form-dialog/candidato-form-dialog.component';
 import { DeleteDialogComponent } from '../dialogs/delete-dialog/delete-dialog.component';
 
 @Component({
@@ -48,7 +49,26 @@ export class CandidatosListComponent implements OnInit, OnChanges {
     dialogRef.afterClosed().subscribe((result) => {
       if (result) {
         this.candidatoService.delete(candidato).subscribe({
-          next: () => { this.getData() }
+          next: () => {
+            this.getData();
+          },
+        });
+      }
+    });
+  }
+
+  handleEdit(candidato: Candidato) {
+    const dialogRef = this.dialog.open(CandidatoFormDialogComponent, {
+      data: {
+        candidato: { ...candidato },
+      },
+    });
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result) {
+        this.candidatoService.update(result).subscribe({
+          next: () => {
+            this.getData();
+          },
         });
       }
     });

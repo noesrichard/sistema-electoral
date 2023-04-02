@@ -3,5 +3,6 @@
     *ngFor="let candidato of candidatos"
     [candidato]="candidato"
     (onDelete)="handleDelete($event)"
+    (onEdit)="handleEdit($event)"
   ></app-candidato-card>
 </div>

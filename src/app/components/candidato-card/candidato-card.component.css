@@ -12,10 +12,15 @@
   display: flex;
 }
 
+.crud-actions button{ 
+  margin: 5px; 
+}
+
+
 .actions{ 
   width: 100%;
   display: flex;
-  justify-content: end;
+  justify-content: space-between;
 }
 
 .example-header-image {

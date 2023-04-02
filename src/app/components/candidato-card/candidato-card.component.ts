@@ -12,6 +12,7 @@ import { DeleteDialogComponent } from '../dialogs/delete-dialog/delete-dialog.co
 export class CandidatoCardComponent implements OnInit {
   @Input() candidato: Candidato;
   @Output() onDelete: EventEmitter<any> = new EventEmitter(); 
+  @Output() onEdit: EventEmitter<any> = new EventEmitter(); 
 
 
   constructor(private service: CandidatoService, private dialog: MatDialog) {}
@@ -28,5 +29,9 @@ export class CandidatoCardComponent implements OnInit {
 
   handleDelete(): void {
     this.onDelete.emit(this.candidato);
+  }
+
+  handleEdit(): void{ 
+    this.onEdit.emit(this.candidato); 
   }
 }
