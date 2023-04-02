@@ -24,6 +24,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { DeleteDialogComponent } from './components/dialogs/delete-dialog/delete-dialog.component';
 import { EstudiantesComponent } from './views/estudiantes/estudiantes.component';
 import { EstudianteFormDialogComponent } from './components/dialogs/estudiante-form-dialog/estudiante-form-dialog.component';
+import { CandidatoCardComponent } from './components/candidato-card/candidato-card.component';
+import {MatCardModule} from '@angular/material/card';
+import { CandidatosListComponent } from './components/candidatos-list/candidatos-list.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +41,9 @@ import { EstudianteFormDialogComponent } from './components/dialogs/estudiante-f
     TarjetoFormDialogComponent,
     DeleteDialogComponent,
     EstudiantesComponent,
-    EstudianteFormDialogComponent
+    EstudianteFormDialogComponent,
+    CandidatoCardComponent,
+    CandidatosListComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +58,8 @@ import { EstudianteFormDialogComponent } from './components/dialogs/estudiante-f
     MatInputModule,
     MatDialogModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatCardModule,
     ],
   providers: [],
   bootstrap: [AppComponent]

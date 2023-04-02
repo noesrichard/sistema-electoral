@@ -1,15 +1,17 @@
 import { Column } from 'src/app/components/table/table.component';
 import { Estudiante } from './estudiante';
 
-export const CANDIDATOS: Estudiante[] = [
+export interface Candidato{ 
+  id: number; 
+  nombre: string; 
+  tarjetonId: number; 
+}
+
+export const CANDIDATOS: Candidato[] =[
   {
     id: 1,
-    curso: '1BGUA',
-    cedula: '1801',
     nombre: 'ALBUJA ... EMILIA ...',
-    sede: 'HUACHIPATA',
-    jornada: 'VERPERTINA',
-    email: 'albuja@estudiantes.edu.ec',
+    tarjetonId: 1,
   },
 ];
 
