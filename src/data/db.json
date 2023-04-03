@@ -130,6 +130,66 @@
       "id": 14,
       "estudianteId": 1,
       "candidatoId": 4
+    },
+    {
+      "id": 15,
+      "estudianteId": 1,
+      "candidatoId": 1
+    },
+    {
+      "id": 16,
+      "estudianteId": 1,
+      "candidatoId": 5
+    },
+    {
+      "id": 17,
+      "estudianteId": 1,
+      "candidatoId": 1
+    },
+    {
+      "id": 18,
+      "estudianteId": 1,
+      "candidatoId": 5
+    },
+    {
+      "id": 19,
+      "estudianteId": 1,
+      "candidatoId": 1
+    },
+    {
+      "id": 20,
+      "estudianteId": 1,
+      "candidatoId": 4
+    },
+    {
+      "id": 21,
+      "estudianteId": 1,
+      "candidatoId": 2
+    },
+    {
+      "id": 22,
+      "estudianteId": 1,
+      "candidatoId": 4
+    },
+    {
+      "id": 23,
+      "estudianteId": 1,
+      "candidatoId": 2
+    },
+    {
+      "id": 24,
+      "estudianteId": 1,
+      "candidatoId": 5
+    },
+    {
+      "id": 25,
+      "estudianteId": 1,
+      "candidatoId": 1
+    },
+    {
+      "id": 26,
+      "estudianteId": 1,
+      "candidatoId": 5
     }
   ]
 }

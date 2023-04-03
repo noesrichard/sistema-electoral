@@ -49,27 +49,27 @@ export class VotacionViewComponent implements OnInit {
     let counter = 0;
     const estudianteId = 1;
     console.log(this.votacion);
-    this.votacion.forEach((candidato) => {
-      this.votoService
-        .create({
-          id: null,
-          estudianteId: estudianteId,
-          candidatoId: candidato.id,
-        })
-        .subscribe({
-          next: () => {
-            counter++;
-            console.log(counter)
-            if (counter == this.votacion.length) {
-              const dialogRef = this.dialog.open(
-                VotacionCompletedDialogComponent
-              );
-              dialogRef.afterClosed().subscribe((result) => {
-                this.router.navigate(["inicio"])
-              });
-            }
-          },
+    if (this.votacion.length == this.tarjetones.length) {
+      const dialogRef = this.dialog.open(VotacionCompletedDialogComponent);
+      dialogRef.afterClosed().subscribe((result) => {
+        this.votacion.forEach((candidato) => {
+          this.votoService
+            .create({
+              id: null,
+              estudianteId: estudianteId,
+              candidatoId: candidato.id,
+            })
+            .subscribe({
+              next: () => {
+                counter++;
+                console.log(counter);
+                if (counter == this.votacion.length) {
+                  this.router.navigate(['inicio']);
+                }
+              },
+            });
         });
-    });
+      });
+    }
   }
 }
