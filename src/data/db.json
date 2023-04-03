@@ -70,6 +70,66 @@
       "id": 2,
       "estudianteId": 1,
       "candidatoId": 4
+    },
+    {
+      "id": 3,
+      "estudianteId": 1,
+      "candidatoId": 1
+    },
+    {
+      "id": 4,
+      "estudianteId": 1,
+      "candidatoId": 5
+    },
+    {
+      "id": 5,
+      "estudianteId": 1,
+      "candidatoId": 2
+    },
+    {
+      "id": 6,
+      "estudianteId": 1,
+      "candidatoId": 5
+    },
+    {
+      "id": 7,
+      "estudianteId": 1,
+      "candidatoId": 1
+    },
+    {
+      "id": 8,
+      "estudianteId": 1,
+      "candidatoId": 4
+    },
+    {
+      "id": 9,
+      "estudianteId": 1,
+      "candidatoId": 1
+    },
+    {
+      "id": 10,
+      "estudianteId": 1,
+      "candidatoId": 4
+    },
+    {
+      "id": 11,
+      "estudianteId": 1,
+      "candidatoId": 2
+    },
+    {
+      "id": 12,
+      "estudianteId": 1,
+      "candidatoId": 4
+    },
+    {
+      "id": 13,
+      "estudianteId": 1,
+      "candidatoId": 1
+    },
+    {
+      "id": 14,
+      "estudianteId": 1,
+      "candidatoId": 4
     }
   ]
 }

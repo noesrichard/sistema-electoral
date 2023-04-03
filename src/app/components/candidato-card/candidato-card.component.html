@@ -9,7 +9,7 @@
         <mat-card-subtitle>{{ votosCounter }} </mat-card-subtitle>
         <mat-card-subtitle
           class="percentage"
-          >{{ (votosCounter / totalVotosCounter) * 100 }}%</mat-card-subtitle
+          >{{ (votosCounter / totalVotosCounter) * 100 | number : '1.1-1' }}%</mat-card-subtitle
         >
       </div>
     </div>

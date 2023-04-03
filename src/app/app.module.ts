@@ -37,6 +37,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { ResultadosViewComponent } from './views/resultados-view/resultados-view.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { VotacionViewComponent } from './views/votacion-view/votacion-view.component';
+import { VotacionCompletedDialogComponent } from './components/dialogs/votacion-completed-dialog/votacion-completed-dialog.component';
+import { InicioViewComponent } from './views/inicio-view/inicio-view.component';
 
 @NgModule({
   declarations: [
@@ -60,6 +62,8 @@ import { VotacionViewComponent } from './views/votacion-view/votacion-view.compo
     MultiSelectComponent,
     ResultadosViewComponent,
     VotacionViewComponent,
+    VotacionCompletedDialogComponent,
+    InicioViewComponent,
   ],
   imports: [
     BrowserModule,
