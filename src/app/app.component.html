@@ -8,15 +8,30 @@
     </div>
     <mat-divider></mat-divider>
     <div class="buttons">
-      <button routerLink="tarjetones" mat-button>
+      <button routerLink="tarjetones" mat-menu-item>
         Tarjetones <mat-icon>ballot</mat-icon>
       </button>
-      <button routerLink="estudiantes" mat-button>
+      <button routerLink="estudiantes" mat-menu-item>
         Estudiantes <mat-icon>person</mat-icon>
       </button>
-      <button routerLink="resultados" mat-button>
-        Resultados <mat-icon>=</mat-icon>
+
+      <button mat-menu-item [matMenuTriggerFor]="candidatosMenu">
+        Candidatos
+        <mat-icon>personal_injury</mat-icon>
       </button>
+      <button routerLink="resultados" mat-menu-item>
+        Resultados <mat-icon>how_to_vote</mat-icon>
+      </button>
+
+      <mat-menu #candidatosMenu>
+        <button
+          mat-menu-item
+          [routerLink]="'candidatos/' + tarjeton.id"
+          *ngFor="let tarjeton of tarjetones"
+        >
+          {{ tarjeton.title }} <mat-icon>ballot</mat-icon>
+        </button>
+      </mat-menu>
     </div>
   </mat-drawer>
   <mat-drawer-content>

@@ -35,6 +35,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MultiSelectComponent } from './components/multi-select/multi-select.component';
 import { MatSelectModule } from '@angular/material/select';
 import { ResultadosViewComponent } from './views/resultados-view/resultados-view.component';
+import { MatMenuModule } from '@angular/material/menu';
 
 @NgModule({
   declarations: [
@@ -76,6 +77,7 @@ import { ResultadosViewComponent } from './views/resultados-view/resultados-view
     MatSidenavModule,
     MatDividerModule,
     MatSelectModule,
+    MatMenuModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
