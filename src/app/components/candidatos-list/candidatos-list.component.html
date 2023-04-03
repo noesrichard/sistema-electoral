@@ -1,12 +1,16 @@
 <div class="flex-row">
   <app-candidato-card
+    *ngFor="let candidato of candidatos; let i = index"
     class="card"
-    *ngFor="let candidato of candidatos"
     [candidato]="candidato"
     (onDelete)="handleDelete($event)"
     (onEdit)="handleEdit($event)"
+    (onVoto)="handleVoto($event, i)"
+
+    [backgroundColor]="background[i]"
     [showCrudButtons]="showCrudButtons"
     [showVoteButton]="showVoteButton"
+    [showVotoCounter]="showVotoCounter"
     [minimal]="minimalCards"
   ></app-candidato-card>
 </div>

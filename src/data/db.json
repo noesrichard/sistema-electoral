@@ -53,6 +53,11 @@
       "id": 4,
       "nombre": "Manuel",
       "tarjetonId": 2
+    },
+    {
+      "id": 5,
+      "nombre": "Otro",
+      "tarjetonId": "2"
     }
   ],
   "votos": [
