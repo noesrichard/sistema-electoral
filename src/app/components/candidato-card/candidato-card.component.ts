@@ -13,12 +13,15 @@ import { DeleteDialogComponent } from '../dialogs/delete-dialog/delete-dialog.co
 })
 export class CandidatoCardComponent implements OnInit {
   @Input() candidato: Candidato;
-  @Output() onDelete: EventEmitter<any> = new EventEmitter();
-  @Output() onEdit: EventEmitter<any> = new EventEmitter();
   @Input() minimal: boolean = false;
   @Input() showCrudButtons: boolean = true;
   @Input() showVoteButton: boolean = true;
   @Input() showVotoCounter: boolean = true;
+  @Input() backgroundColor: string = 'white'; 
+
+  @Output() onDelete: EventEmitter<any> = new EventEmitter();
+  @Output() onEdit: EventEmitter<any> = new EventEmitter();
+  @Output() onVoto: EventEmitter<any> = new EventEmitter();
 
   votosCounter: number = 0;
   totalVotosCounter: number = 0;
@@ -59,5 +62,9 @@ export class CandidatoCardComponent implements OnInit {
 
   handleEdit(): void {
     this.onEdit.emit(this.candidato);
+  }
+
+  handleVoto(): void{ 
+    this.onVoto.emit(this.candidato)
   }
 }

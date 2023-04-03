@@ -1,0 +1,19 @@
+<div class="card-container save-button">
+<button mat-raised-button color="accent" (click)="handleSave()">Guardar</button>
+</div>
+<div *ngFor="let tarjeton of tarjetones; let i = index">
+  <div class="votes-sections">
+    <h1>{{ tarjeton.title }}</h1>
+  </div>
+  <div class="card-container">
+    <app-candidatos-list
+      [tarjetonId]="tarjeton.id"
+      [showCrudButtons]="false"
+      [showVoteButton]="showVoteButton[i]"
+      [showVotoCounter]="false"
+      [minimalCards]="minimalCards[i]"
+      (onVoto)="handleVoto($event, i)"
+    ></app-candidatos-list>
+  </div>
+  <mat-divider></mat-divider>
+</div>

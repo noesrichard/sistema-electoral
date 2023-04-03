@@ -53,6 +53,11 @@
       "id": 4,
       "nombre": "Manuel",
       "tarjetonId": 2
+    },
+    {
+      "id": 5,
+      "nombre": "Otro",
+      "tarjetonId": "2"
     }
   ],
   "votos": [
@@ -65,6 +70,126 @@
       "id": 2,
       "estudianteId": 1,
       "candidatoId": 4
+    },
+    {
+      "id": 3,
+      "estudianteId": 1,
+      "candidatoId": 1
+    },
+    {
+      "id": 4,
+      "estudianteId": 1,
+      "candidatoId": 5
+    },
+    {
+      "id": 5,
+      "estudianteId": 1,
+      "candidatoId": 2
+    },
+    {
+      "id": 6,
+      "estudianteId": 1,
+      "candidatoId": 5
+    },
+    {
+      "id": 7,
+      "estudianteId": 1,
+      "candidatoId": 1
+    },
+    {
+      "id": 8,
+      "estudianteId": 1,
+      "candidatoId": 4
+    },
+    {
+      "id": 9,
+      "estudianteId": 1,
+      "candidatoId": 1
+    },
+    {
+      "id": 10,
+      "estudianteId": 1,
+      "candidatoId": 4
+    },
+    {
+      "id": 11,
+      "estudianteId": 1,
+      "candidatoId": 2
+    },
+    {
+      "id": 12,
+      "estudianteId": 1,
+      "candidatoId": 4
+    },
+    {
+      "id": 13,
+      "estudianteId": 1,
+      "candidatoId": 1
+    },
+    {
+      "id": 14,
+      "estudianteId": 1,
+      "candidatoId": 4
+    },
+    {
+      "id": 15,
+      "estudianteId": 1,
+      "candidatoId": 1
+    },
+    {
+      "id": 16,
+      "estudianteId": 1,
+      "candidatoId": 5
+    },
+    {
+      "id": 17,
+      "estudianteId": 1,
+      "candidatoId": 1
+    },
+    {
+      "id": 18,
+      "estudianteId": 1,
+      "candidatoId": 5
+    },
+    {
+      "id": 19,
+      "estudianteId": 1,
+      "candidatoId": 1
+    },
+    {
+      "id": 20,
+      "estudianteId": 1,
+      "candidatoId": 4
+    },
+    {
+      "id": 21,
+      "estudianteId": 1,
+      "candidatoId": 2
+    },
+    {
+      "id": 22,
+      "estudianteId": 1,
+      "candidatoId": 4
+    },
+    {
+      "id": 23,
+      "estudianteId": 1,
+      "candidatoId": 2
+    },
+    {
+      "id": 24,
+      "estudianteId": 1,
+      "candidatoId": 5
+    },
+    {
+      "id": 25,
+      "estudianteId": 1,
+      "candidatoId": 1
+    },
+    {
+      "id": 26,
+      "estudianteId": 1,
+      "candidatoId": 5
     }
   ]
 }

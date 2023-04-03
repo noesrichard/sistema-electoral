@@ -1,8 +1,10 @@
 import {
   Component,
+  EventEmitter,
   Input,
   OnChanges,
   OnInit,
+  Output,
   SimpleChanges,
 } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
@@ -23,6 +25,11 @@ export class CandidatosListComponent implements OnInit, OnChanges {
   @Input() minimalCards: boolean = false;
   @Input() showCrudButtons: boolean = true;
   @Input() showVoteButton: boolean = true;
+  @Input() showVotoCounter: boolean = true;
+
+  background: string[] = []; 
+
+  @Output() onVoto: EventEmitter<any> = new EventEmitter(); 
 
   constructor(
     private candidatoService: CandidatoService,
@@ -39,10 +46,16 @@ export class CandidatosListComponent implements OnInit, OnChanges {
     this.getData();
   }
 
+  handleVoto(value: Candidato, i: number): void{ 
+    this.onVoto.emit(value)
+    this.background[i] = 'green'
+  }
+
   getData(): void {
     this.candidatoService.getCandidatosByTarjetonId(this.tarjetonId).subscribe({
       next: (response) => {
         this.candidatos = response;
+        this.background.push('white')
       },
     });
   }

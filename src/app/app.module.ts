@@ -36,6 +36,9 @@ import { MultiSelectComponent } from './components/multi-select/multi-select.com
 import { MatSelectModule } from '@angular/material/select';
 import { ResultadosViewComponent } from './views/resultados-view/resultados-view.component';
 import { MatMenuModule } from '@angular/material/menu';
+import { VotacionViewComponent } from './views/votacion-view/votacion-view.component';
+import { VotacionCompletedDialogComponent } from './components/dialogs/votacion-completed-dialog/votacion-completed-dialog.component';
+import { InicioViewComponent } from './views/inicio-view/inicio-view.component';
 
 @NgModule({
   declarations: [
@@ -58,6 +61,9 @@ import { MatMenuModule } from '@angular/material/menu';
     CandidatoFormComponent,
     MultiSelectComponent,
     ResultadosViewComponent,
+    VotacionViewComponent,
+    VotacionCompletedDialogComponent,
+    InicioViewComponent,
   ],
   imports: [
     BrowserModule,
