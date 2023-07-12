@@ -1,16 +1,32 @@
-# Sistema Electoral
+This system allows the registration of users and candidates to carry out a voting process.
 
-Este sistema permite el registro de usaurios y candidatos para realizar un proceso de votacion. 
+The database is a JSON file that can be served as a REST API using the json-server package. The frontend consists of an application developed with Angular and Material Angular.
 
-La base de datos es un archivo json el cual mediante el paquete json-server puede servirse como REST API.
-El frontend consiste de una aplicacion desarrollada con Angular y Material Angular.
+To run json-server with the database in db.json:
 
-Ejecutar json-server con la base de datos en db.json
-1. `npm install -g json-server`
-2. `json-server --watch src/data/db.json`
+1. Install json-server globally using the following command:
+   ```
+   npm install -g json-server
+   ```
 
-Ejecutar app angular
-Instalar si es necesario el cli de angular 
-1. `npm install -g @angular/cli`
-2. `npm install` dentro del proyecto para instalar dependencias.
-3. `ng serve -o`
+2. Run json-server to watch for changes in the db.json file:
+   ```
+   json-server --watch src/data/db.json
+   ```
+
+To run the Angular app, follow these steps:
+
+1. If necessary, install the Angular CLI globally:
+   ```
+   npm install -g @angular/cli
+   ```
+
+2. Inside the project, install the dependencies by running the following command:
+   ```
+   npm install
+   ```
+
+3. Start the Angular development server and open the application in the browser:
+   ```
+   ng serve -o
+   ```
